@@ -1,0 +1,54 @@
+{% block menu %}
+<style>
+#menu ul {
+	list-style-type:none;
+	padding-left:0px;
+	background-color:#e43c3c;
+	padding:1px 5px 5px 1px;
+	width: 100%;
+	text-align:right;
+}
+
+#menu ul li {
+	display: inline;
+	border-left: 1px solid #c0c0c0;
+	padding: 0px 10px 0px 10px;
+	margin: 5px 0px 5px 0px;
+	color:#ffffff;
+	font-size:13pt;
+}
+
+#menu ul #title {
+	float:left;
+	padding-left:10px;
+}
+
+#menu ul li:first-child {
+	border-left:none;
+	text-align:left;
+}
+
+#menu ul li:last-child {
+	border-left:none;
+}
+
+#menu a {
+	text-decoration:none;
+	color:#ffffff;
+}
+</style>
+<div id="menu">
+<ul>
+<li><a href="/" id="title"> 넓은 산딸기 </a></li>
+<li><a href="/blog"> 블로그 </a></li>
+<li><a href="/blog"> 용돈기입장 </a></li>
+<li><a href="/blog"> 스케줄 </a></li>
+{% if login == True %}
+<li><button> 로그아웃 </button></li>
+{% else %}
+<li><button> 회원가입 </button></li>
+<li><button> 로그인 </button><li>
+{% endif %}
+</ul>
+</div>
+{% endblock %}
